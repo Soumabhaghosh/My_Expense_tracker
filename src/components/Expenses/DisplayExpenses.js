@@ -7,15 +7,36 @@ import ExpensesChart from "./ExpensesChart";
 
 function DisplayExpenses(props) {
 
-  const [filterYear, setFilteredYear] = useState('2020');
+
+  const [filterYear, setFilteredYear] = useState(new Date().getFullYear().toString());
 
   const filterChangeHandler = year => {
     setFilteredYear(year);  
     
   }
   
+  
+  const filteredExpenses = props.expenses_list.filter(expense => new Date(expense.date).getFullYear().toString() === filterYear);
 
-  const filteredExpenses = props.expenses_list.filter(expense => expense.date.getFullYear().toString() == filterYear);
+  // var sum=0;
+  // const hashmap=new Map()
+  //  filteredExpenses.map((i,index)=>{
+  //   // sum+=i.amount
+  //   var month=new Date(i.date).getMonth()
+  //   hashmap.set(month,hashmap.get(month)+i.amount)
+  //  })
+  // // props.setTotal({
+  // //   jan:0,
+  // //   feb:0,
+  // //   aug:sum
+  // // })
+  // function onclickHand(){
+  //   props.setTotal({
+  //     jan:hashmap.get(0),
+  //     feb:0,
+  //     aug:hashmap.get(7)
+  //   })
+  // }
 
   return (
     <div>
@@ -27,7 +48,7 @@ function DisplayExpenses(props) {
         <ExpensesChart expenses={filteredExpenses} />
         
 
-        {filteredExpenses.length === 0 && (<p>No expenses found.</p>)}
+        {filteredExpenses.length === 0 && (<h1>No expenses found.</h1>)}
         
         {
           filteredExpenses.length > 0 && 
@@ -41,6 +62,7 @@ function DisplayExpenses(props) {
             amount={i.amount}
             date={i.date}
             delete={props.delete}
+            
           /> 
           
             </div>
@@ -51,6 +73,7 @@ function DisplayExpenses(props) {
 
 
             </Card>
+            {/* <button onClick={()=>{onclickHand()}}>Get Total</button> */}
     </div>
   );
 }

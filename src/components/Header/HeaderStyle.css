@@ -1,0 +1,14 @@
+header {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+    background-color: #2C3E50;
+    color: #ECF0F1;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .expense-tracker-heading {
+    font-size: 24px;
+    margin: 0;
+  }
