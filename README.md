@@ -52,8 +52,4 @@ npm start
 
 - React: [^17.0.2](https://reactjs.org/)
 
-## Acknowledgements
 
-- The Expense Tracker project is based on the React - The Complete Guide (incl Hooks, React Router, Redux) course by Academind by Maximilian Schwarzmüller on Udemy.
-
-Enjoy tracking your expenses with Expense Tracker!
