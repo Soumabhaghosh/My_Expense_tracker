@@ -25,7 +25,7 @@ To run the application locally and explore its codebase, follow these steps:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/ReeveFernandes/Expense-Tracker.git
+git clone https://github.com/Soumabhaghosh/My_Expense_tracker
 ```
 
 2. Navigate to the project directory:
