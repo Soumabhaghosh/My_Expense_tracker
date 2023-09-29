@@ -1,11 +1,13 @@
 import React, {useState} from "react";
 
 import "./ExpenseForm.css";
+import { toBeInvalid } from "@testing-library/jest-dom/dist/matchers";
 
 const ExpenseForm = (props) => {
     const [enteredTitle, setEnteredTitle] = useState('');
     const [enteredAmount, setEnteredAmount] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
+    const [end,setEtd]=useState('')
 
     // const [userInput, setUserInput] = useState({
     //     enteredTitle: '',
@@ -14,6 +16,7 @@ const ExpenseForm = (props) => {
     // });
 
     const titleChangeHandler = (event) => {
+        
         setEnteredTitle(event.target.value);
         // setUserInput({
         //     ...userInput,
@@ -35,6 +38,7 @@ const ExpenseForm = (props) => {
 
     const dateChangeHandler = event => {
         setEnteredDate(event.target.value);
+        setEtd(event.target.value);
         //  setUserInput({
         //     ...userInput,
         //     enteredDate: event.target.value,
@@ -46,14 +50,21 @@ const ExpenseForm = (props) => {
         const expenseData ={
             title: enteredTitle,
             amount: +enteredAmount,
-            date: new Date(enteredDate)
+            date: new Date(enteredDate),
+            dte:end
         };
-        console.log(expenseData);
-        props.onSaveExpenseData(expenseData);
-        props.visibility(false);
-        setEnteredAmount('');
-        setEnteredDate('');
-        setEnteredTitle('');
+        if(expenseData.title=="" || expenseData.amount=="" ){
+            alert("Any of the three field can not be empty")
+        }
+        else{
+            console.log(expenseData.end);
+            props.onSaveExpenseData(expenseData);
+            props.visibility(false);
+            setEnteredAmount('');
+            setEnteredDate('');
+            setEnteredTitle('');
+        }
+       
 
     };
 
