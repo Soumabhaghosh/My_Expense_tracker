@@ -13,7 +13,7 @@ const App = () => {
     localStorage.setItem("userData",JSON.stringify(DUMMY_EXPENSES))
   }
   else{
-    DUMMY_EXPENSES=JSON.parse(localStorage.getItem("userData"))
+    DUMMY_EXPENSES=[...JSON.parse(localStorage.getItem("userData"))]
   }
 
   
@@ -25,9 +25,9 @@ const App = () => {
 
   const addExpenseHandler = expense => {
 
-   setExpenses(prevExpenses => {
-      return [expense, ...expenses]
-    });
+   setExpenses( e => 
+       [expense, ...expenses]
+    );
     
     expense.date=new Date(expense.date)
     localStorage.setItem('userData',JSON.stringify([expense, ...expenses]))
@@ -37,7 +37,7 @@ const App = () => {
 
     filter=expenses.filter(item=> item.id!==p)
 
-    setExpenses(prevExpenses=>filter)
+    setExpenses(filter)
     localStorage.setItem('userData',JSON.stringify(filter))
      
   }
