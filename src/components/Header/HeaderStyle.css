@@ -1,14 +1,74 @@
+
+
+
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+
 header {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-    background-color: #2C3E50;
+    background-color: #94aac0;
     color: #ECF0F1;
     padding: 20px 0;
     text-align: center;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* align-content: flex-end; */
+    flex-wrap: wrap;
+    transition: background 0.2s linear;
+    
   }
   
   .expense-tracker-heading {
     font-size: 24px;
     margin: 0;
   }
+  .dark{
+    background-color: rgb(16, 248, 248);
+    color: black;
+      transition: background 0.2s linear;
+  }
+
+
+  .checkbox-label {
+    background-color: #111;
+    width: 40px;
+    height: 15px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .fa-moon {color: #f1c40f;}
+  
+  .fa-sun {color: #f39c12;}
+  
+  .checkbox-label .ball {
+    background-color: #fff;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+  }
+  
+  .checkbox:checked + .checkbox-label .ball {
+    transform: translateX(24px);
+  }
+  
+  
+  .checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  
+  

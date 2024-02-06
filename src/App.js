@@ -42,11 +42,42 @@ const App = () => {
      
   }
 
+  const [isDark,setDark]=useState(JSON.parse(localStorage.getItem('key')))
+  console.log(isDark)
+
+  if(isDark){
+    // console.log("bod is light")
+    document.body.style.backgroundColor='#f2f28f'
+    // localStorage.setItem('key',isDark);
+  }else{
+    // console.log("body is dark")
+    document.body.style.backgroundColor='#707069'
+    // localStorage.setItem('key',isDark)
+  }
+
+  const handleClick = () => {
+    
+    if(isDark){
+      document.body.style.backgroundColor='#f2f28f'
+      localStorage.setItem('key',JSON.stringify(!isDark));
+      document.body.style.transition='background 0.2s linear'
+    }else{
+      document.body.style.backgroundColor='#707069'
+      document.body.style.transition='background 0.2s linear'
+      localStorage.setItem('key',JSON.stringify(!isDark))
+      // transition: background 0.2s linear;
+    }
+    setDark(!isDark)
+    
+  };
+
   return (
   <div>
-    <Header/>
+    
+    <Header  func_click={handleClick} dark={isDark}/>
+    
     <NewExpense onAddExpense = {addExpenseHandler} />
-    <DisplayExpenses  delete={del} expenses_list={expenses} />
+    <DisplayExpenses dark={isDark}  delete={del} expenses_list={expenses} />
     
   </div>
  );

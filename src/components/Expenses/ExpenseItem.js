@@ -8,11 +8,7 @@ import Card from "../UI/Card";
 
 function ExpenseItem(props) {
 
-  // const [title, setTitle] = useState(props.title);
-
-  // const titleChangeHandler = () => {
-  //   setTitle("Updated");
-  // }
+ 
   const onClickHand =(e)=>{
     props.delete(e);
   }

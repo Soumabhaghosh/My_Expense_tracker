@@ -4,7 +4,19 @@
   margin: 2rem auto;
   width: 50rem;
   max-width: 95%;
+  transition: background 0.2s linear;
 }
+.dark-card{
+  padding: 1rem;
+  background-color: rgb(219, 208, 208);
+  margin: 2rem auto;
+  width: 50rem;
+  max-width: 95%;
+  transition: background 0.2s linear;
+  
+
+}
+
 .header-style{
   color:white;
   display:flex;
@@ -12,4 +24,11 @@
   align-items: center;
   font-family:Arial, Helvetica, sans-serif;
 
+}
+.dark-header{
+  color:black;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  font-family:Arial, Helvetica, sans-serif
 }

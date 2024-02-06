@@ -1,7 +1,12 @@
 .expenses-filter {
-  color: white;
+  color: rgb(14, 1, 1);
   padding: 0 1rem;
 }
+.dark-label {
+  color: rgb(250, 241, 241);
+  
+}
+
 
 .expenses-filter__control {
   display: flex;

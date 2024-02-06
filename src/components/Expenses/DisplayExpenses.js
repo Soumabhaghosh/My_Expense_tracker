@@ -38,14 +38,14 @@ function DisplayExpenses(props) {
   return (
     <div>
 
-      <Card className="expenses" >
+      <Card className={props.dark?"expenses":'dark-card'} >
 
-        <ExpensesFilter selected={filterYear} onFilterChange={setFilteredYear}/>
+        <ExpensesFilter dark={props.dark} selected={filterYear} onFilterChange={setFilteredYear}/>
 
         <ExpensesChart expenses={filteredExpenses} />
         
 
-        {filteredExpenses.length === 0 && (<h1 className="header-style">No expenses found.</h1>)}
+        {filteredExpenses.length === 0 && (<h1 className={props.dark?"header-style":'dark-header'}>No expenses found.</h1>)}
         
         {
           filteredExpenses.length > 0 && 
@@ -70,7 +70,7 @@ function DisplayExpenses(props) {
 
 
             </Card>
-            {/* <button onClick={()=>{onclickHand()}}>Get Total</button> */}
+            
     </div>
   );
 }
