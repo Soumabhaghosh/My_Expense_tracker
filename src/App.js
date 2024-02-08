@@ -43,7 +43,7 @@ const App = () => {
   }
 
   const [isDark,setDark]=useState(JSON.parse(localStorage.getItem('key')))
-  console.log(isDark)
+  // console.log(isDark)
 
   if(isDark){
     // console.log("bod is light")
