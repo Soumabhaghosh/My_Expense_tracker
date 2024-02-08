@@ -9,7 +9,7 @@ function Card(props) {
   <div className={classes}>{props.children}
   
   
-  </div>;
+  </div>
   
   </>
   )
